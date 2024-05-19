@@ -1,8 +1,5 @@
 console.log("Hello, Odin!");
 
-let humanScore = 0;
-let computerScore = 0;
-
 let getComputerChoice = () => {
 	const move = ["rock", "paper", "scissors"];
 	return move[Math.floor(Math.random() * 3)];
@@ -26,9 +23,11 @@ let playRound = (humanChoice, computerChoice) => {
 	let computerChoiceCapped = computerChoice.charAt(0).toUpperCase() + computerChoice.substring(1); 
 	let outcome = judge(humanChoice, computerChoice);
 
-	if ( outcome === null) { console.log("It's A Draw! no points awarded.") }
-	else if (outcome === false) { console.log(`You Lose! ${computerChoiceCapped} beats ${humanChoiceCapped}.`) }
-	else { console.log(`You Win! ${humanChoiceCapped} beats ${computerChoiceCapped}.`)}
+	if ( outcome === null) { console.log("It's A Draw! no points awarded."); }
+	else if (outcome === false) { console.log(`You Lose! ${computerChoiceCapped} beats ${humanChoiceCapped}.`); }
+	else { console.log(`You Win! ${humanChoiceCapped} beats ${computerChoiceCapped}.`); }
+
+	return outcome;
 }
 
 // This configuration assumes we're only checking if param1 beats param2.
@@ -45,4 +44,34 @@ let judge = (humanChoice, computerChoice) => {
 	return null;
 }
 
-playRound(getHumanChoice("Pick your move: "), getComputerChoice());
+let playGame = () => {
+	let humanScore = 0;
+	let computerScore = 0;
+	let roundCount = 0;
+
+	while (true) {
+		if (roundCount > 5) {
+			let scoreTally = `With a Score of ${humanScore} to ${computerScore}.`;
+			if (humanScore === computerScore) {
+				console.log(`A Draw! ${scoreTally}`);
+				return;
+			}
+			let verdict = humanScore > computerScore ? `You Win! ${scoreTally}` : `You Lose! ${scoreTally}` 
+			console.log(verdict);
+			return;
+		}
+
+		let humanSelection = getHumanChoice("Pick a move: ");
+		let computerSelection = getComputerChoice();
+
+		let result = playRound(humanSelection, computerSelection);
+
+		if (result === false) { computerScore++; }
+		if (result === true) { humanScore++; }
+
+		roundCount++;
+	}
+	
+}
+
+playGame();
