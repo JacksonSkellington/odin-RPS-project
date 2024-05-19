@@ -7,15 +7,15 @@ let getComputerChoice = () => {
 
 let getHumanChoice = (msg) => {
 	const move = ["rock", "paper", "scissors"];
-	let response = prompt(msg).toLowerCase();
+	while (true) {
+		let response = prompt(msg).toLowerCase();
 	
-	for (let i = 0; i < 3; i++) {
-		if (response === move[i]) {
-			return response;
+		for (let i = 0; i < 3; i++) {
+			if (response === move[i]) {
+				return response;
+			}
 		}
 	}
-
-	return null;
 }
 
 let playRound = (humanChoice, computerChoice) => {
@@ -61,7 +61,7 @@ let playGame = () => {
 			return;
 		}
 
-		let humanSelection = getHumanChoice("Pick a move: ");
+		let humanSelection = getHumanChoice("Please Enter a Valid Move: ");
 		let computerSelection = getComputerChoice();
 
 		let result = playRound(humanSelection, computerSelection);
