@@ -80,6 +80,6 @@ const resetGame = () => {
 	roundCount = 0;
 	playerScorecard.textContent = "You: 0";
 	computerScorecard.textContent = "CPU: 0";
-	verdictCard.textContent = "Let's PLay!";
+	verdictCard.textContent = "Let's Play!";
 }
 //playGame();
