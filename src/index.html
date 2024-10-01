@@ -5,11 +5,31 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="index.js" defer></script>
+	<link rel="stylesheet" href="styles.css">
 	<title>Odin Rock Paper Scissors Project</title>
 </head>
 
 <body>
-	<script src="index.js"></script>
+	<div class="container">
+		<div class="scoreboard">
+			<div class="scorecards">
+				<div class="player-score">You: 0</div>
+				<div class="computer-score">CPU: 0</div>
+			</div>
+			<div class="verdict-card">Let's Play!</div>
+		</div>
+		<div class="control-panel">
+			<div class="selection-btn-container">
+				<a id="rock-btn" class="selection-btn">Rock</a>
+				<a id="paper-btn" class="selection-btn">Paper</a>
+				<a id="scissors-btn" class="selection-btn">Scissors</a>
+			</div>
+			<div class="play-btn-container">
+				<a class="play-btn">Play</a>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>

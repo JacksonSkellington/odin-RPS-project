@@ -1,0 +1,110 @@
+/* Importing Roboto font family */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html {
+    height: 100%;
+  }
+
+body {
+    font-family: 'Roboto', 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(-45deg, #bd3f00, #4d018b);
+    flex-wrap: wrap;
+}
+
+.container {
+    padding: 10px;
+    min-width: 25vw;
+    min-height: 50vh;
+    color: #edd;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    min-width: 85%;
+    flex-wrap: wrap;
+}
+
+.scorecards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.verdict-card {
+    padding: 32px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.control-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    min-width: 85%;
+    flex-wrap: wrap;
+}
+
+.selection-btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    min-width: 100%;
+    flex-wrap: wrap;
+}
+
+.selection-btn, .play-btn {
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 6px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    user-select: none;
+}
+
+.selection-btn {
+    background-color: #ff3100;
+    box-shadow: 0 0 8px #ff3100;
+}
+
+.selection-btn:hover {
+    background-color: #ff6100;
+    box-shadow: 0 0 8px #ff6100;
+}
+
+.play-btn {
+    padding: 20px 40px;
+    background-color: #6204b0;
+    box-shadow: 0 0 8px #6204b0;
+}
+
+.play-btn:hover {
+    background-color: #6f02c9;
+    box-shadow: 0 0 8px #6f02c9;
+}
+
+
+.play-btn-container {
+    display: flex;
+    justify-content: center;
+}
